@@ -1,20 +1,36 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {FormsModule} from '@angular/forms';
+import {HttpModule} from '@angular/http';
+import { routing } from "./app.routing";
 
-import { AppComponent } from './app.component';
+import {SpotifyService} from './spotify.service'
+import {AppComponent} from './app.component';
+import {NavbarComponent} from './navbar/navbar.component';
+import {AboutComponent} from './about/about.component';
+import {SearchComponent} from './search/search.component';
+import { ArtistComponent } from './artist/artist.component';
+import { AlbumComponent } from './album/album.component';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    HttpModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        NavbarComponent,
+        AboutComponent,
+        SearchComponent,
+        ArtistComponent,
+        AlbumComponent,
+
+    ],
+    imports: [
+        BrowserModule,
+        FormsModule,
+        HttpModule,
+        routing
+    ],
+
+    providers: [SpotifyService],
+    bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
